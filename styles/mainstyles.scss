@@ -1,0 +1,139 @@
+@mixin sizeobj($w,$h){
+    width: $w;
+    height: $h;
+}
+
+@mixin pad($p){
+    padding-top: $p;
+}
+
+
+.header{
+    h1{
+        font-size: 64px;
+        line-height: 75.84px;
+        margin-left: 123px;
+        font-style: normal;
+        font-weight: normal;
+    }
+
+}
+
+.error{
+    color: red;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    @include sizeobj(1128px,694px )
+}
+
+.formFooter {
+    margin-left: 122px;
+    display: flex;
+    flex-direction: column;
+    width: 473px;
+    
+    h1{
+        margin-bottom: 74px;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 76px;
+        font-style: normal;
+        @include sizeobj(473px,76px);
+    }
+    
+    label{
+        margin-top: 29px;
+        position: relative;
+        @include sizeobj(147px,29px);
+    }
+    
+    input{
+        margin-bottom: 32px;
+        padding-bottom: 7px;
+        position: relative;
+        @include sizeobj(434px,29px);
+        border: none;
+        border-bottom-style: solid;
+    }
+
+    // Next line for Mozila 
+    input::-moz-placeholder { color: #A3A6A9; }
+    input::-webkit-input-placeholder { color:#A3A6A9; }
+    
+    button{
+        line-height: 25.6px;
+    //  font-family: 'Formular';  Шрифт платный, поэтому оставил нативный, он ничем не отличается
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        text-align: center;
+        @include sizeobj(226px,48px);
+        color: #FFFFFF;
+        background-color: black;
+        cursor: pointer;
+
+        &:active{
+            border-radius: 15px;
+        }
+
+        &:hover{
+            color: green
+        }
+    }
+
+    p{
+        padding-left: 3px;
+
+        a{
+            text-decoration: none;
+            border-bottom: 2px dashed black;
+            padding-bottom: 3px;
+        }
+    }
+}
+
+.confirm{
+    @include pad(27px);
+    @include sizeobj(389px,66px );
+}
+
+.company{
+    margin-top: 28px;
+    @include pad(150px);
+    padding-left: 257px;
+    flex-direction: column;
+    display: flex;
+
+    .startProject{
+        font-size: 18px;
+        line-height: 28.8px;
+        @include sizeobj(402px,59px )
+    }
+
+    .numberFooter{
+        @include sizeobj(451px,43px );
+        @include pad(42px);
+        font-size: 32px;
+        line-height: 24px;
+    }
+
+    .mail{
+        @include sizeobj(451px,45px );
+        font-size: 32px;
+        @include pad(8px);
+    }
+
+    .location{
+        font-size: 16px;
+        @include sizeobj(390px,58px );
+        @include pad(78px);
+    }
+
+    .question{
+        @include pad(4px);
+    }
+}
